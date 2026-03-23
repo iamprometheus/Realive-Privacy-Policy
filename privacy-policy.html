@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Realive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0c10;
+      --surface: #111418;
+      --border: rgba(255,255,255,0.07);
+      --accent: #00c49a;
+      --accent-dim: rgba(0,196,154,0.12);
+      --accent-border: rgba(0,196,154,0.25);
+      --text: #e6e9f0;
+      --text-secondary: rgba(230,233,240,0.55);
+      --text-tertiary: rgba(230,233,240,0.3);
+      --danger: #e24b4a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Grid noise texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.015) 39px, rgba(255,255,255,0.015) 40px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Header ── */
+    header {
+      position: relative;
+      z-index: 1;
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(24px, 5vw, 80px);
+    }
+
+    .header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 0 40px;
+    }
+
+    .wordmark {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .wordmark::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Main content ── */
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 0 clamp(24px, 5vw, 80px);
+      padding-bottom: 80px;
+    }
+
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding-top: 56px;
+    }
+
+    /* ── Summary card ── */
+    .summary {
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 56px;
+    }
+
+    .summary p {
+      font-size: 15px;
+      color: rgba(0,196,154,0.85);
+      line-height: 1.7;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .section-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      opacity: 0.7;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    p + p {
+      margin-top: 14px;
+    }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: var(--surface);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-top: 20px;
+    }
+
+    .highlight p {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      margin: 0;
+    }
+
+    /* ── Contact section ── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    .contact-body {
+      flex: 1;
+    }
+
+    .contact-body strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .contact-body a {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-body a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 32px clamp(24px, 5vw, 80px);
+    }
+
+    .footer-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-brand span {
+      color: var(--accent);
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    /* ── Fade-in animation ── */
+    .content > * {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    .summary { animation-delay: 0.05s; }
+    section:nth-child(2) { animation-delay: 0.1s; }
+    section:nth-child(3) { animation-delay: 0.15s; }
+    section:nth-child(4) { animation-delay: 0.2s; }
+    section:nth-child(5) { animation-delay: 0.25s; }
+    section:nth-child(6) { animation-delay: 0.3s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header-inner {
+      opacity: 0;
+      animation: fadeUp 0.4s ease 0.02s forwards;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .contact-card { flex-direction: column; gap: 14px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="wordmark">Realive</div>
+      <h1>Privacy <span>Policy</span></h1>
+      <p class="meta">Last updated: March 2026</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="content">
+
+      <div class="summary">
+        <p>Realive is built with a simple principle: we only access what the app needs to function, and we never store or sell your personal data. This policy explains exactly what we do and don't collect.</p>
+      </div>
+
+      <section>
+        <div class="section-number">01</div>
+        <h2>Data Collection</h2>
+        <p>Realive does not collect, store, or transmit any unnecessary personal data. We only process information required for the App's core functionality.</p>
+        <p>We do not maintain user accounts, we do not track usage analytics, and we do not use third-party advertising SDKs. Your use of the App remains private to you.</p>
+        <div class="highlight">
+          <p>No account required. No analytics tracking. No advertising identifiers collected.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-number">02</div>
+        <h2>Camera and Microphone Access</h2>
+        <p>The App requires access to your device's camera and microphone to broadcast video and audio. This is the core purpose of the application — without these permissions, the App cannot function.</p>
+        <p>All media captured by your camera and microphone is transmitted directly to your selected streaming platform (such as Twitch, YouTube, Facebook, or others) in real time. This media is <strong style="color: var(--text); font-weight: 500;">not stored on our servers</strong> at any point.</p>
+        <div class="highlight">
+          <p>Your stream goes directly from your device to your chosen platform. We are not an intermediary that stores or processes your video or audio.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-number">03</div>
+        <h2>Third-Party Services</h2>
+        <p>By streaming to third-party platforms through the App, you are subject to their respective privacy policies. Each platform — Twitch, YouTube, Facebook, TikTok, Kick, and others — handles your data according to their own terms.</p>
+        <p>We do not control how these platforms collect, store, or use your data, your stream content, or information about your viewers. We strongly encourage you to review the privacy policy of any platform you choose to stream to.</p>
+      </section>
+
+      <section>
+        <div class="section-number">04</div>
+        <h2>Local Storage</h2>
+        <p>The App stores certain preferences locally on your device — such as your selected language, theme, stream key (encrypted), and stream settings. This data never leaves your device and is not transmitted to our servers.</p>
+        <p>You can clear this data at any time by uninstalling the App.</p>
+      </section>
+
+      <section>
+        <div class="section-number">05</div>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in the App or applicable law. When we do, we will update the date at the top of this page.</p>
+        <p>Your continued use of the App after any changes to this policy will indicate your acceptance of the updated terms. We encourage you to review this policy periodically.</p>
+      </section>
+
+      <section>
+        <div class="section-number">06</div>
+        <h2>Contact</h2>
+        <p>If you have any questions or concerns about this Privacy Policy or how the App handles data, please reach out to us directly.</p>
+        <div class="contact-card">
+          <div class="contact-icon">✉</div>
+          <div class="contact-body">
+            <strong>Support & Privacy Inquiries</strong>
+            <a href="mailto:resseddev@gmail.com">resseddev@gmail.com</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><span>Realive</span> · Privacy Policy</div>
+      <div class="footer-note">© 2026 Realive. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
